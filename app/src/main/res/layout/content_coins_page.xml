@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.jts.root.ebike_project.Coins_page"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#fff"
+            >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+            >
+            <Button
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/backbtn"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/black_back"
+                android:onClick="ReturnHome"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="15dp"
+                tools:ignore="OnClick" />
+
+
+            <!-- <Button
+                 android:layout_width="30dp"
+                 android:layout_height="30dp"
+                 android:id="@+id/backbtn"
+                 android:layout_gravity="center"
+                 android:gravity="center"
+                 android:layout_marginLeft="10dp"
+                 android:background="@drawable/black_back"
+                 />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COINS"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/profile_back"
+            >
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/coinbig"
+                android:background="@drawable/coin_big"/>
+
+            <TextView
+                android:id="@+id/coins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/coinbig"
+                android:layout_alignLeft="@+id/coinbig"
+                android:layout_alignRight="@+id/coinbig"
+                android:layout_alignTop="@+id/coinbig"
+                android:layout_margin="1dp"
+                android:layout_marginTop="40dp"
+
+                android:gravity="center"
+                android:text="250"
+                android:textColor="#00aeef"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+            </View>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You will receive "
+                android:textStyle="bold"
+                android:textSize="23dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="1500"
+                android:id="@+id/notes"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="23dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Coins"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="23dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="every month !"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="40dp"
+
+            />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

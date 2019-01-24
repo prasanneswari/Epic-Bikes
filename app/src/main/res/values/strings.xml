@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ebike_project</string>
+    <string name="title_activity_maps">Ebike</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title_activity_main">EPICK BIKES</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open1">Open navigation drawer1</string>
+    <string name="navigation_drawer_close2">Close navigation drawer2</string>
+
+    <string name="action_settings_unlock">Unable To Unlock ?</string>
+    <string name="action_settings_endtrip">Unable To End Trip ? </string>
+    <string name="action_settings_damage">Report Damage</string>
+    <string name="action_settings_faqs">F.A.Q’s</string>
+
+    <string name="permission_camera_rationale" />
+    <string name="title_activity_ontrip">ON MY TRIP</string>
+
+
+    <string name="default_notification_channel" translatable="false">fcm_default_channel</string>
+    <string name="fcm_message" />
+
+
+</resources>

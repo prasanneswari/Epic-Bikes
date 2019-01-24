@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="title_color">#000</color>
+
+
+
+    <color name="progressBarBackground">#83ADE5</color>
+    <color name="progressBar">#2E5383</color>
+
+    <color name="loadingBackground">#0075dd</color>
+    <color name="loadingButton">#d9e6f7</color>
+    <color name="hint">#ebf2fb</color>
+
+    <color name="noAccess">#9F0101</color>
+
+    <color name="red">#ff0000</color>
+
+
+    <color name="pending">#d4900e</color>
+
+    <color name="green">#008000</color>
+
+    <color name="blueStartColorAlpha">#F00075dd</color>
+    <color name="blueEndColorAlpha">#BFc1d6f2</color>
+    <color name="grayAlpha">#00000000</color>
+
+    <color name="lightGrayActivityBK">#f6f6f6</color>
+    <color name="white">#fff</color>
+
+
+
+    <color name="black_semi_transparent">#B2000000</color>
+    <color name="background">#e5e5e5</color>
+    <color name="half_black">#000</color>
+    <color name="white_pressed">#f1f1f1</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+
+
+</resources>

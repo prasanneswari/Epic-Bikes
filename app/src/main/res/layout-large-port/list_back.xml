@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:text="location"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#000"
+                android:background="@drawable/list_border"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/listtext"
+                android:paddingLeft="80dp"
+                android:paddingRight="80dp"
+                android:drawableLeft="@drawable/list_border"
+                android:drawableStart="@drawable/select_location"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

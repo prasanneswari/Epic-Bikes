@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="33dp"
+                android:textColor="#000"
+                android:text="Get Set Go !"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/block_border">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:text="#110345"
+                android:id="@+id/bikeid"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="left"
+                android:drawableLeft="@drawable/cycle"
+                android:drawableStart="@drawable/cycle"
+                android:paddingLeft="20dp"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="50dp"
+                android:background="#87000000">
+            </View>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:id="@+id/range"
+                android:layout_height="match_parent"
+                android:text="20 km"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/charge"
+                android:drawableStart="@drawable/charge"
+                android:paddingLeft="20dp"
+                tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="30dp"
+            android:background="#000" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelbtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="#fff"
+                android:text="Cancel"
+                android:textColor="#fa1b8ae4"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/confirmbtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="#0075dd"
+                android:text="CONFIRM"
+                android:textColor="#fff"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

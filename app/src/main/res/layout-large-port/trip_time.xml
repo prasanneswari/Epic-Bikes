@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/app_bar_map"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.jts.root.ebike_project.Trip_Time">
+
+
+    <!--<fragment
+        android:id="@+id/fragment"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2bf2efef"
+            android:orientation="vertical"
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/block_border">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="match_parent"
+                    android:hint="#110345"
+                    android:id="@+id/bikeidmap"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="left"
+                    android:drawableLeft="@drawable/cycle"
+                    android:drawableStart="@drawable/cycle"
+                    android:paddingLeft="20dp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="50dp"
+                    android:background="#87000000">
+                </View>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:id="@+id/unlockotpmap"
+                    android:layout_height="match_parent"
+                    android:hint="OTP: 1245"
+                    android:textColor="#000"
+                    android:gravity="center"
+                    android:textSize="30dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:drawableLeft="@drawable/otp_icon"
+                    android:drawableStart="@drawable/otp_icon"
+                    android:paddingLeft="20dp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:textColor="#4a4a4a"
+                    android:letterSpacing="0.03"
+                    android:gravity="center_horizontal"
+                    android:text="Note: Enter OTP to Unlock Bike"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="25dp"
+                android:layout_gravity="center"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_access_time"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trip Time:"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="23dp"
+                    android:textColor="#b5333030"
+                    android:layout_marginLeft="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="05:25:05"
+                    android:id="@+id/triptmmap"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="23dp"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            >
+            <fragment
+                xmlns:map="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.jts.root.ebike_project.Trip_Time"                >
+
+            </fragment>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

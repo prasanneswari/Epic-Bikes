@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.jts.root.ebike_project.Epick_Bikes"
+    tools:showIn="@layout/app_bar_main"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/maplayout"
+        >
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/text_border"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"
+                android:id="@+id/menu"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/menu"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.8"
+                android:layout_height="match_parent"
+                android:text="EPICK BIKES"
+                android:textStyle="bold"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:gravity="center"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="0.1"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/refresh"
+                android:background="@drawable/questionmark"
+                android:layout_marginRight="10dp"
+                />
+        </LinearLayout>-->
+        <!--<android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:id="@+id/toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:elevation="4dp"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fragment_container">
+
+            </FrameLayout>
+
+
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nav_view"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header_drawer"
+            app:menu="@menu/drawermenu">
+
+        </android.support.design.widget.NavigationView>
+       --> <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        >
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.jts.root.ebike_project.MapsActivity" />
+
+
+       <!-- <View
+            android:id="@+id/helperView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+-->
+
+
+    </LinearLayout>
+<!--
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_gravity="center"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="UNLOCK BIKE"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:id="@+id/unlockbtn"
+                android:paddingLeft="60dp"
+                android:paddingRight="60dp"
+                android:gravity="center"
+                android:drawablePadding="20dp"
+                android:drawableLeft="@drawable/btn_back"
+                android:drawableStart="@drawable/unlock_bike"
+                android:background="@drawable/btn_back"
+                tools:ignore="HardcodedText,SpUsage" />
+        </LinearLayout>
+-->
+    </LinearLayout>
+</LinearLayout>

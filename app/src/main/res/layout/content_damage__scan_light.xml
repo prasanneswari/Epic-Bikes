@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.jts.root.ebike_project.Damage_Scan_light"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+
+                >
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/backbtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/black_back"
+                    android:onClick="ReturnHome"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:textSize="15dp"
+                    tools:ignore="OnClick" />
+
+
+                <!--<Button
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/backbtn"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/black_back"
+                    />-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0.6"
+            android:background="#000"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:letterSpacing="0.02"
+                    android:shadowColor="#76ffffff"
+                    android:shadowDy="2"
+                    android:shadowRadius="10"
+                    android:text="Scan"
+                    android:textColor="#ffffff"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginLeft="10dp">
+
+                <FrameLayout
+                    android:id="@+id/scanner_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8">
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="80dp">
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:paddingLeft="13dp"
+                        android:id="@+id/flashoff"
+                        android:drawableStart="@drawable/flash_off"
+                        android:background="@drawable/flashlight_back"
+                        android:drawableLeft="@drawable/flash_off"
+                        android:layout_marginBottom="30dp"/>
+
+
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:paddingLeft="17dp"
+                        android:id="@+id/flashon"
+                        android:drawableStart="@drawable/flash_on"
+                        android:background="@drawable/flashlight_back"
+                        android:drawableLeft="@drawable/flash_on" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!--
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                            android:id="@+id/zxing_barcode_scanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:zxing_scanner_layout="@layout/zxing_barcode_scanner">
+                        </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+                        <Button
+                            android:id="@+id/switch_flashlight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:onClick="switchFlashlight"
+                            tools:ignore="OnClick" />
+                        </RelativeLayout>
+            -->
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            >
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="2dp"
+                android:background="#979797"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.2"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="OR "
+                android:textColor="#000"
+                android:textSize="18dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:layout_height="2dp"
+                android:background="#979797"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/bikeid"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/text_border"
+                android:hint="Enter Bike ID"
+                android:inputType="number"
+                android:textSize="17dp"
+                android:textColor="#000"
+                android:ems="10"
+                android:singleLine="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:drawablePadding="30dp"
+                android:paddingLeft="30dp"
+                android:drawableLeft="@drawable/cycle"
+                android:drawableStart="@drawable/cycle"
+                tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:layout_gravity="center"
+            >
+            <!-- <Button
+                 android:layout_width="140dp"
+                 android:layout_height="wrap_content"
+                 android:text="ADD"
+                 android:textAllCaps="false"
+                 android:textColor="#fff"
+                 android:textSize="15dp"
+                 android:id="@+id/addbtn"
+                 android:background="@drawable/btn_back"
+                 tools:ignore="HardcodedText,SpUsage"
+                 android:layout_marginRight="10dp"/>
+           -->  <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="OK"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/okbtn"
+            android:background="@drawable/btn_back"
+            tools:ignore="HardcodedText,SpUsage" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

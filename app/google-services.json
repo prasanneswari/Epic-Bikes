@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "942413232061",
+    "firebase_url": "https://epickorg.firebaseio.com",
+    "project_id": "epickorg",
+    "storage_bucket": "epickorg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942413232061:android:bf0a91a4d3f69195",
+        "android_client_info": {
+          "package_name": "com.jts.root.ebike_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942413232061-nvu4414q87bfsgr0git5l38pc5kepa5v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jts.root.ebike_project",
+            "certificate_hash": "ca273018ecc1fb8f1244b2f04181bc1f2a5aa44f"
+          }
+        },
+        {
+          "client_id": "942413232061-c8nl1qjkibe9gblrng52qd90h6du80pk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLMFoN8d9HNwK_X3cEXp8ISy2YTuWJh_A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942413232061-c8nl1qjkibe9gblrng52qd90h6du80pk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

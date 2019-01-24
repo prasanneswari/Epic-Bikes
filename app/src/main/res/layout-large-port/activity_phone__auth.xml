@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    android:background="@drawable/block_border"
+    tools:context="com.jts.root.ebike_project.Phone_Auth">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <!-- <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:id="@+id/backbtn"
+                android:background="@drawable/back_arrow"
+                />
+        </LinearLayout>-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:gravity="center"
+                android:background="@drawable/bike_vector_login"
+                />
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/backbtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/black_back"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="33dp"
+                android:textColor="#4a4a4a"
+                android:letterSpacing="0.02"
+                android:textStyle="bold"
+                android:text="OTP Sent to your Mobile No."
+                />
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/phone_auth_code_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.goodiebag.pinview.Pinview
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mypinview"
+                app:pinWidth="70dp"
+                android:minHeight="100dp"
+                app:cursorVisible="true"
+                app:forceKeyboard="true"
+                app:inputType="number"
+                android:visibility="visible">
+
+            </com.goodiebag.pinview.Pinview>
+
+            <Button
+                android:id="@+id/verify_code_b"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:textSize="18dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="Verify Code"
+                android:visibility="visible"
+                android:background="@drawable/btn_back"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mypinview" />
+        </android.support.constraint.ConstraintLayout>
+
+        <!--<android.support.constraint.ConstraintLayout
+            android:id="@+id/phone_auth_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <com.goodiebag.pinview.Pinview
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mypinview"
+                app:pinWidth="70dp"
+                android:minHeight="100dp"
+                app:cursorVisible="true"
+                app:forceKeyboard="true"
+                app:inputType="number"
+                android:visibility="visible"
+
+
+                >
+
+            </com.goodiebag.pinview.Pinview>
+            <Button
+                android:id="@+id/verify_code_b"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:letterSpacing="0.02"
+                tools:text="CONFIRM OTP"
+                android:visibility="visible"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/btn_back"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mypinview" />
+        </android.support.constraint.ConstraintLayout>
+-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Not Received ? "
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="#4a4a4a"
+            android:textStyle="bold"
+            android:id="@+id/resendotp"
+            android:text="Resend OTP"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

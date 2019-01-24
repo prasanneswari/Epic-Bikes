@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single"
+        >
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/menu_profile"
+            android:title="Profile" />
+
+
+        <item android:id="@+id/coins"
+            android:title="Coins"
+            android:icon="@drawable/coin_big"
+
+            />
+        <item android:id="@+id/trip"
+            android:title="TripHistory"
+            android:icon="@drawable/total_trips"
+            />
+        <item android:id="@+id/faqs"
+            android:title="FAQs"
+            android:icon="@drawable/faq"
+            />
+        <item android:id="@+id/contactus"
+            android:title="Contact Us"
+            android:icon="@drawable/menu_contact"
+            />
+        <item android:id="@+id/switchlocation"
+            android:title="Switch Location"
+            android:icon="@drawable/menu_location"
+            />
+
+    </group>
+</menu>

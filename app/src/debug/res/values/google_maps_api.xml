@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=CA:27:30:18:EC:C1:FB:8F:12:44:B2:F0:41:81:BC:1F:2A:5A:A4:4F%3Bcom.jts.root.ebike_project
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    CA:27:30:18:EC:C1:FB:8F:12:44:B2:F0:41:81:BC:1F:2A:5A:A4:4F
+
+    SHA-1 certificate fingerprint:
+    CA:27:30:18:EC:C1:FB:8F:12:44:B2:F0:41:81:BC:1F:2A:5A:A4:4F
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDPRX4eyIiy8BCVoD0q3OWSytZOfpk2sSY</string>
+</resources>

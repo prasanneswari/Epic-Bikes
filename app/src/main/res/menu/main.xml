@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+        <item
+            android:id="@+id/unlock"
+            android:orderInCategory="100"
+            android:title="@string/action_settings_unlock"
+            app:showAsAction="never"
+            />
+        <item
+            android:id="@+id/endtrip"
+            android:orderInCategory="100"
+            android:title="@string/action_settings_endtrip"
+            app:showAsAction="never"
+            />
+        <item
+    android:id="@+id/damage"
+    android:orderInCategory="100"
+    android:title="@string/action_settings_damage"
+    app:showAsAction="never"
+    />
+        <item
+    android:id="@+id/settingsfaqs"
+    android:orderInCategory="100"
+    android:title="@string/action_settings_faqs"
+    app:showAsAction="never"
+    />
+</menu>
