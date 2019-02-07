@@ -246,7 +246,7 @@ public class Report_damages extends AppCompatActivity {
                     });
                     dialog.show();
 
-                } else if (urlIMAGE == null) {
+                } /*else if (urlIMAGE == null) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(Report_damages.this);
                     LayoutInflater inflater = (LayoutInflater) Report_damages.this.getSystemService(getApplication().LAYOUT_INFLATER_SERVICE);
                     View dialogLayout = inflater.inflate(R.layout.bikemap_popup2,
@@ -277,7 +277,7 @@ public class Report_damages extends AppCompatActivity {
                     });
                     dialog.show();
 
-                } else {
+                } */else {
 
                     if (orgposval != null) {
 
@@ -396,7 +396,7 @@ public class Report_damages extends AppCompatActivity {
                                         Button cancel = (Button) dialogLayout.findViewById(R.id.okbtn);
                                         TextView textpopup = (TextView) dialogLayout.findViewById(R.id.popuptxt);
 
-                                        textpopup.setText("Reasponse=Successfully adding the report damages");
+                                        textpopup.setText("Successfully adding the report damages");
 
                                         cancel.setOnClickListener(new View.OnClickListener() {
                                             @Override

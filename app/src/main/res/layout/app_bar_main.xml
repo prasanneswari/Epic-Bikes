@@ -7,7 +7,6 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context="com.jts.root.ebike_project.Epick_Bikes">
 
-
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,143 +22,15 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
 
             >
-
-
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
 
-    <!--    <View
-        android:id="@+id/shadowView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F2FFFFFF"
-        android:visibility="gone" />
--->
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:fab="http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        >
+    <include layout="@layout/fab_submenu"/>
 
-
-        <com.github.clans.fab.FloatingActionMenu
-            android:id="@+id/fabmenu"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            fab:menu_buttonSpacing="0dp"
-            fab:menu_colorNormal="#fff"
-            android:layout_marginRight="10dp"
-            fab:menu_colorPressed="#fff"
-            fab:menu_animationDelayPerItem="50"
-            fab:menu_labels_paddingTop="4dp"
-            fab:menu_labels_paddingRight="8dp"
-            fab:menu_labels_paddingBottom="4dp"
-            fab:menu_labels_paddingLeft="8dp"
-            fab:menu_labels_colorPressed="@color/white"
-            fab:menu_labels_colorNormal="@color/white"
-            fab:menu_labels_colorRipple="#99d4d4d4"
-            fab:menu_colorRipple="#99d4d4d4"
-            fab:menu_fab_size="normal"
-            fab:menu_icon="@drawable/help"
-            fab:menu_labels_padding="8dp"
-            fab:menu_labels_position="right"
-            fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
-            fab:menu_labels_textSize="18dp"
-            fab:menu_openDirection="up"
-            fab:menu_shadowColor="#66aff198"
-            fab:menu_shadowRadius="4dp"
-            fab:menu_shadowXOffset="1dp"
-            fab:menu_shadowYOffset="4dp"
-            fab:menu_showShadow="true"
-            fab:menu_labels_style="@style/custom_fab"
-
-            fab:fab_shadowColor="#66000000"
-            fab:fab_showShadow="true"
-            fab:menu_labels_ellipsize="end"
-            fab:menu_labels_singleLine="true"
-            fab:menu_labels_showShadow="true"
-            >
-
-            <com.github.clans.fab.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_label="Unable To Unlock ?"
-                fab:fab_size="mini"
-                android:onClick="unabletounlock"
-                tools:ignore="OnClick"
-                android:layout_margin="@dimen/fab_margin"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"
-
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:onClick="unabletoend"
-                tools:ignore="OnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_label="Unable To End Trip ?"
-                fab:fab_size="mini"
-                android:layout_margin="@dimen/fab_margin"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:onClick="reportdamage"
-                tools:ignore="OnClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_label="Report Damage"
-                fab:fab_size="mini"
-                android:layout_margin="@dimen/fab_margin"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"
-                />
-
-            <com.github.clans.fab.FloatingActionButton
-                android:onClick="faqs"
-                tools:ignore="OnClick"
-                android:id="@+id/faqs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                fab:fab_label="F.A.Q’s"
-                fab:fab_size="mini"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/white"
-                fab:fab_colorNormal="@color/white"
-                fab:fab_colorPressed="@color/white_pressed"
-                />
-        </com.github.clans.fab.FloatingActionMenu>
-
-    </RelativeLayout>
-
-
-
-    <!--<RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:gravity="center"
-
-        >
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/helpid"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            app:backgroundTint="@color/white"
-            app:srcCompat="@drawable/help"
-            android:textSize="20dp"
-
-            />
-    </RelativeLayout>-->
 
 
     <LinearLayout
@@ -177,7 +48,7 @@
         android:textColor="#fff"
         android:textSize="20dp"
         android:id="@+id/unlockbtn"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="bottom|center"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
@@ -192,21 +63,5 @@
     </LinearLayout>
 
 
-<!--
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/gpslock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin"
-            android:textSize="20dp"
-            app:backgroundTint="@color/white"
-            app:srcCompat="@drawable/gps" />
-    </LinearLayout>
--->
 
 </android.support.design.widget.CoordinatorLayout>

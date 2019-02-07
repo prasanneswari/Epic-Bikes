@@ -63,7 +63,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="23dp"
                 android:textColor="#000"
                 android:gravity="center_horizontal"
                 android:text="Welcome"
@@ -82,14 +82,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="60dp">
 
             <TextView
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center_horizontal"
-                android:text="Epic Bikes is an E-Bike Sharing System. You can now start using Epic Bikes!"
+                android:text="Epick Bikes is an E-Bike Sharing System. You can now start using Epick Bikes!"
                 android:textColor="#ffffff"
                 android:textSize="18dp" />
         </LinearLayout>
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:orientation="horizontal"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             >
            <!-- <ImageView
                 android:layout_width="25dp"

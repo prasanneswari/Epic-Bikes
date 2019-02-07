@@ -3,11 +3,14 @@ package com.jts.root.ebike_project;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Html;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -69,16 +72,22 @@ public class Register extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (!s.toString().contains("+91")) {
-                    phoneNum.setText("+91" + s.toString());
+                    phoneNum.setText("+91");
                     Selection.setSelection(phoneNum.getText(), phoneNum.getText().length());
                 }
                 if(s.length() > 0){
                     if(!phoneValidator(s)){
-                        phoneNum.setError("Please Enter Valid number!");
+                        phoneNum.setError("Enter valid number");
+
+                       /* Drawable err_indiactor = getResources().getDrawable(R.drawable.indicator_input_error);
+                        phoneNum.setCompoundDrawablesWithIntrinsicBounds(null, null, err_indiactor, null);
+*/
+
                     }
                 }
             }
         };
+
         // phoneNum = (EditText) m_Main.findViewById(R.id.input_Number);
         phoneNum.addTextChangedListener(m_MobileWatcher);
 
@@ -148,6 +157,8 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+
+    //phone validation code
     private boolean phoneValidator(CharSequence phone){
         if(phone.length() < 6 ||phone.length() < 13  || phone.length() > 13)
             return false;
@@ -160,6 +171,8 @@ public class Register extends AppCompatActivity {
             return source;
         }
     }
+
+
     public void JSONSenderVolleyreqotp(String login_url, final JSONObject json) {
         Log.d("---reqotpurl-----", "---" + login_url);
         Log.d("555555", "reqotp" + json.toString());
@@ -273,24 +286,6 @@ public class Register extends AppCompatActivity {
                 Log.d("my reqotp error-----", "shulamithi: " + String.valueOf(error));
                 Toast.makeText(getApplicationContext(), "connection error ", Toast.LENGTH_LONG).show();
                 dialog_progress.dismiss();
-
-               /* String errormesg = String.valueOf(error);
-                Log.d(" Error---------", "errormesg: " + errormesg);
-
-                final AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
-                builder.setTitle("Info");
-                builder.setMessage(String.valueOf(error));
-                builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface1, int i) {
-
-                        dialog_progress.dismiss();
-                        dialogInterface1.dismiss();
-                    }
-                });
-
-                AlertDialog dialog = builder.create();
-                dialog.show();*/
 
             }
         }) {

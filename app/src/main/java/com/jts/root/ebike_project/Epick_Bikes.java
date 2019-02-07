@@ -56,6 +56,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -177,12 +178,21 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
 
-    private static float MAP_ZOOM_MAX = 3;
-    private static float MAP_ZOOM_MIN = 21;
-    FloatingActionMenu materialDesignFAM;
-    FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
     private static long backButtonCount;
-    View backgroundcolor;
+    Marker Mmarker;
+
+
+
+    private boolean fabExpanded = false;
+    private FloatingActionButton fabSettings;
+    private LinearLayout unabletoend;
+    private LinearLayout unabletounlock;
+    private LinearLayout reportdamage;
+    private LinearLayout faqs;
+    View backgroungdim;
+    boolean mMapIsTouched;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -208,48 +218,11 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
             }
         });
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
 
-        materialDesignFAM = (FloatingActionMenu) findViewById(R.id.fabmenu);
-      /*  final FloatingActionButton help = findViewById(R.id.helpid);
-        FloatingActionButton gpslock = (FloatingActionButton) findViewById(R.id.gpslock);
 
-        help.setOnClickListener(new View.OnClickListener() {
-            @Override3
-            public void onClick(View view) {
-                PopupMenu popupMenu=new PopupMenu(Epick_Bikes.this,help);
-                popupMenu.getMenuInflater().inflate(R.menu.main, popupMenu.getMenu());
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-                        int id = menuItem.getItemId();
-
-                        //noinspection SimplifiableIfStatement
-                        if (id == R.id.unlock) {
-                            unableto_unlockpopup();
-
-                        } else if (id == R.id.endtrip) {
-                            unableto_endtrippopup();
-                        } else if (id == R.id.damage) {
-                            Intent intent = new Intent(Epick_Bikes.this, Report_damages.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                        } else if (id == R.id.settingsfaqs) {
-                            Intent intent = new Intent(Epick_Bikes.this, FAQs_page.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                        }
-
-                        return true;
-                    }
-                });
-                popupMenu.show();
-            }
-        });
-*/
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -300,39 +273,116 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(profileimg);
         }
+
+        fabSettings = (FloatingActionButton) this.findViewById(R.id.helpid);
+        backgroungdim=(View) findViewById(R.id.background_dimmer) ;
+
+        faqs = (LinearLayout) this.findViewById(R.id.faqs);
+        reportdamage = (LinearLayout) this.findViewById(R.id.reportdamage);
+        unabletoend= (LinearLayout) this.findViewById(R.id.uanbletoend);
+        unabletounlock= (LinearLayout) this.findViewById(R.id.unableunlock);
+
+
+        unabletoend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                unableto_endtrippopup();
+
+            }
+        });
+        unabletounlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                unableto_unlockpopup();
+
+            }
+        });
+        reportdamage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Epick_Bikes.this, Report_damages.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+        });
+        faqs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Epick_Bikes.this, FAQs_page.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+        });
+
+        fabSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (fabExpanded == true){
+                    closeSubMenusFab();
+                    backgroungdim.setVisibility(View.GONE);
+
+
+                }  else {
+                    openSubMenusFab();
+                    backgroungdim.setVisibility(View.VISIBLE);
+                    //framelayout.setBackgroundColor(Color.parseColor("#6d1a1a1a"));
+
+                }
+            }
+        });
+
+        //Only main FAB is visible in the beginning
+        closeSubMenusFab();
+
+        backgroungdim.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // Interpret MotionEvent data
+                // Handle touch here
+                mMapIsTouched=true;
+                backgroungdim.setVisibility(View.GONE);
+                faqs.setVisibility(View.INVISIBLE);
+                reportdamage.setVisibility(View.INVISIBLE);
+                unabletoend.setVisibility(View.INVISIBLE);
+                unabletounlock.setVisibility(View.INVISIBLE);
+
+                fabExpanded=false;
+
+                return true;
+            }
+        });
+
+
     }
 
-    public void onMenuExpanded() {
-        backgroundcolor.setVisibility(View.VISIBLE);
-    }
+   private void closeSubMenusFab(){
+       faqs.setVisibility(View.INVISIBLE);
+       reportdamage.setVisibility(View.INVISIBLE);
+       unabletoend.setVisibility(View.INVISIBLE);
+       unabletounlock.setVisibility(View.INVISIBLE);
 
-    public void onMenuCollapsed() {
-        backgroundcolor.setVisibility(View.GONE);
-    }
-
-
-    public void unabletounlock(View view){
-        unableto_unlockpopup();
+           fabExpanded = false;
 
 
-    }
-    public void unabletoend(View view){
-        unableto_endtrippopup();
+   }
 
-    }
-    public void reportdamage(View view){
-        Intent intent = new Intent(Epick_Bikes.this, Report_damages.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-    public void faqs(View view){
-        Intent intent = new Intent(Epick_Bikes.this, FAQs_page.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+    //Opens FAB submenus
+    private void openSubMenusFab(){
+        faqs.setVisibility(View.VISIBLE);
+        reportdamage.setVisibility(View.VISIBLE);
+        unabletoend.setVisibility(View.VISIBLE);
+        unabletounlock.setVisibility(View.VISIBLE);
+
+        //Change settings icon to 'X' icon
+
+            fabExpanded = true;
+
 
     }
-
-
     @Override
     public void onBackPressed()
     {
@@ -427,10 +477,10 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
     @Override
     public boolean onMarkerClick(Marker marker) {
 
+        marker.hideInfoWindow();
         String getclickval = marker.getTitle();
         Log.d("get val:", String.valueOf(getclickval));
         //int intval= Integer.parseInt(getclickval);
@@ -505,8 +555,9 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
 
             }
         //}
-        return false;
+        return true;
     }
+
 
     @SuppressLint("MissingPermission")
     @Override
@@ -1114,6 +1165,7 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
                                                 Log.d("bikearray values", "---" + bikearray);
 
                                                 MarkerOptions markerOptions = new MarkerOptions();
+
                                                /* for (int i = 0; i < bikearray.size(); i++) {
                                                     BitmapDescriptor icon1 = BitmapDescriptorFactory.fromResource(R.drawable.stationimg);
                                                     List<Marker> Markerlist = new ArrayList<>();
@@ -1153,19 +1205,27 @@ public class Epick_Bikes extends AppCompatActivity implements NavigationView.OnN
 */
                                                 BitmapDescriptor icon1 = BitmapDescriptorFactory.fromResource(R.drawable.location_pin);
 
-                                                mMap.addMarker(new MarkerOptions()
+
+                                                Mmarker= mMap.addMarker(new MarkerOptions()
                                                             .position(bikearray.get(i))
-                                                            //.icon(BitmapDescriptorFactory.fromResource(R.drawable.stationimg))
+                                                            //.icon(BitmapDescriptorFactory.fromResource(R.drawable.my_location))
                                                             .title(String.valueOf(i))
                                                             //.icon(BitmapDescriptorFactory.fromBitmap(bmp))
                                                             .anchor(0.5f, 1)
-                                                             .icon(icon1)
+                                                            .icon(icon1)
+
+
+
                                                     );
+
 
                                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bikearray.get(i), 25));
                                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(bikearray.get(i), 10),5000,null);
                                             }
+
+
                                             mMap.setOnMarkerClickListener(Epick_Bikes.this);
+
 
                                            // bikeidS = new String[bikeidL.size()];
 

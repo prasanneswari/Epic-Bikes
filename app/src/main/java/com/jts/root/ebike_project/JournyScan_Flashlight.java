@@ -765,6 +765,7 @@ public class JournyScan_Flashlight extends AppCompatActivity implements ZXingSca
                                                 //delgroup(grpnm);
 
                                                 dialog.dismiss();
+                                                dialog_progress.dismiss();
                                             }
                                         });
                                         dialog.show();

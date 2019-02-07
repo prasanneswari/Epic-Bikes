@@ -130,15 +130,13 @@ public class Trip_summary extends AppCompatActivity {
                     ratingtext.setText("Bad");
                 }else if (rating<3){
                     ratingtext.setText("Below Average");
-
-                }else if (rating<=4){
+                }else if (rating<4){
                     ratingtext.setText("Average");
-
-                }else if (rating==5){
+                }else if (rating<5){
                     ratingtext.setText("Good");
-
+                }else if (rating==5){
+                    ratingtext.setText("Epic!");
                 }
-
             }
         });
         okbtn.setOnClickListener(new View.OnClickListener() {
@@ -252,7 +250,6 @@ public class Trip_summary extends AppCompatActivity {
                             } catch (JSONException e) {
 
                             }
-
                         }
                     }
                      else {

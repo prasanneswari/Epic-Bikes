@@ -87,7 +87,7 @@
                     android:gravity="center_horizontal"
                     android:textColor="#ffffff"
                     android:textSize="30dp"
-                    android:text="Epic Bikes is an E-Bike Sharing System. You can now start using Epic Bikes!"
+                    android:text="Epick Bikes is an E-Bike Sharing System. You can now start using Epick Bikes!"
                     />
             </LinearLayout>
 

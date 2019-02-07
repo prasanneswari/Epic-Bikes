@@ -38,7 +38,7 @@ public class Coins_page extends AppCompatActivity {
     TextView coinsT,notes;
     ImageView profileimg;
     String url = profileposval;
-    Button backbtn;
+    Button backbtn,addmoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class Coins_page extends AppCompatActivity {
         coinsT=(TextView)findViewById(R.id.coins);
         notes=(TextView)findViewById(R.id.notes);
         //backbtn=(Button)findViewById(R.id.backbtn);
+        addmoney=(Button)findViewById(R.id.addmoney);
 
         if (coinsposval!=null&&refreshposval!=null) {
             coinsT.setText(coinsposval);
@@ -64,26 +65,16 @@ public class Coins_page extends AppCompatActivity {
         }*/
 
 
-      /*  backbtn.setOnClickListener(new View.OnClickListener() {
+        addmoney.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (triptime==true){
-                    Intent intent = new Intent(Coins_page.this, Trip_Time.class);
+                    Intent intent = new Intent(Coins_page.this, Wallet.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-                }else {
-                    Intent intent = new Intent(Coins_page.this, Epick_Bikes.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
             }
         });
-*/
-
-
     }
     public void ReturnHome(View view){
         super.onBackPressed();
     }
-
 }

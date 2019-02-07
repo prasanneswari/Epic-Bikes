@@ -27,6 +27,16 @@
 
     <uses-permission android:name="android.permission.Flashlight" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <permission android:name="android.permission.BLUETOOTH"
+        android:label="BLUETOOTH" />
+    <permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -43,15 +53,14 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:hardwareAccelerated="false"
-        >
+        tools:ignore="GoogleAppIndexingWarning">
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -97,54 +106,72 @@
         <activity
             android:name=".Phone_Auth"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Trip_Time"
             android:label="@string/title_activity_ontrip"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".List_places"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".List_places"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Epick_Bikes"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Trip_history"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Coins_page"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Profile_page"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FAQs_page"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Trip_history"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Coins_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Profile_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FAQs_page"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Report_damages"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".JournyScan_Flashlight"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".JournyScan_Flashlight"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".End_trips"
-            android:screenOrientation="portrait"
-             />
-        <activity android:name=".Trip_summary"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Damage_Scan_light"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Register"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Splash_Screen"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Contact_Us"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Proceed_to_nextstep"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".End_My_Ride"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Trip_summary"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Damage_Scan_light"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Splash_Screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Contact_Us"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Proceed_to_nextstep"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".End_My_Ride"
+            android:screenOrientation="portrait"></activity>
+        <!--
+               Add this activity to your manifest
+               it comes with the Paytm SDK
+        -->
 
-        </activity>
+        <activity android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|keyboard"/>
+        <activity android:name=".Wallet"></activity>
+
     </application>
 
 </manifest>

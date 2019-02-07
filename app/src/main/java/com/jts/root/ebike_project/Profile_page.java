@@ -98,8 +98,8 @@ public class Profile_page extends AppCompatActivity {
 
 
     private void loadimageurl(String url) {
-        Picasso.with(this).load(url).placeholder(R.mipmap.ic_launcher)
-                .error(R.mipmap.ic_launcher)
+        Picasso.with(this).load(url).placeholder(R.drawable.profile)
+                .error(R.drawable.profile)
                 .into(profilesrc, new com.squareup.picasso.Callback() {
                     @Override
                     public void onSuccess() {

@@ -35,6 +35,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -42,6 +43,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -129,6 +131,9 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
     long timeSwap1 = 0L;
     long finalTime = 0L;
 
+    public static final long MILLIS_TO_MINITS=60000;
+    public static final long MILLIS_TO_HOURS=3600000;
+
 
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -143,6 +148,14 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
 
     private static long backButtonCount;
 
+    private boolean fabExpanded = false;
+    private FloatingActionButton fabSettings;
+    private LinearLayout unabletoend;
+    private LinearLayout unabletounlock;
+    private LinearLayout reportdamage;
+    private LinearLayout faqs;
+    View backgroungdim;
+    boolean mMapIsTouched;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,11 +176,11 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
 
 
         if (ScanbikeId != null && otp != null) {
-            bikeidEmap.setText(ScanbikeId);
+            bikeidEmap.setText("#"+ScanbikeId);
             unlockotpmap.setText("OTP:"+otp);
 
         } else if (bikeidlanch != null && otplanch != null) {
-            bikeidEmap.setText(bikeidlanch);
+            bikeidEmap.setText("#"+bikeidlanch);
             unlockotpmap.setText("OTP:"+otplanch);
 
         }
@@ -204,6 +217,7 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
 
             }
         });
+
 
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -243,27 +257,108 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
                     .into(profileimg);
         }
 
-    }
-    public void unabletounlock(View view){
-        unableto_unlockpopup();
+
+
+        fabSettings = (FloatingActionButton) this.findViewById(R.id.helpid);
+        backgroungdim=(View) findViewById(R.id.background_dimmer) ;
+
+        faqs = (LinearLayout) this.findViewById(R.id.faqs);
+        reportdamage = (LinearLayout) this.findViewById(R.id.reportdamage);
+        unabletoend= (LinearLayout) this.findViewById(R.id.uanbletoend);
+        unabletounlock= (LinearLayout) this.findViewById(R.id.unableunlock);
+
+
+        unabletoend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                unableto_endtrippopup();
+
+            }
+        });
+        unabletounlock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                unableto_unlockpopup();
+
+            }
+        });
+        reportdamage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Trip_Time.this, Report_damages.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+        });
+        faqs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Trip_Time.this, FAQs_page.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+
+            }
+        });
+
+        fabSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (fabExpanded == true){
+                    closeSubMenusFab();
+                    backgroungdim.setVisibility(View.GONE);
+
+                } else {
+                    openSubMenusFab();
+                    backgroungdim.setVisibility(View.VISIBLE);
+
+                }
+            }
+        });
+
+        //Only main FAB is visible in the beginning
+        closeSubMenusFab();
+
+        backgroungdim.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                // Interpret MotionEvent data
+                // Handle touch here
+                mMapIsTouched=true;
+                backgroungdim.setVisibility(View.GONE);
+                faqs.setVisibility(View.INVISIBLE);
+                reportdamage.setVisibility(View.INVISIBLE);
+                unabletoend.setVisibility(View.INVISIBLE);
+                unabletounlock.setVisibility(View.INVISIBLE);
+
+                fabExpanded=false;
+
+                return true;
+            }
+        });
 
     }
-    public void unabletoend(View view){
-        unableto_endtrippopup();
+    private void closeSubMenusFab(){
+        faqs.setVisibility(View.INVISIBLE);
+        reportdamage.setVisibility(View.INVISIBLE);
+        unabletoend.setVisibility(View.INVISIBLE);
+        unabletounlock.setVisibility(View.INVISIBLE);
 
-    }
-    public void reportdamage(View view){
-        Intent intent = new Intent(Trip_Time.this, Report_damages.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
-    public void faqs(View view){
-        Intent intent = new Intent(Trip_Time.this, FAQs_page.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-
+        fabExpanded = false;
     }
 
+    //Opens FAB submenus
+    private void openSubMenusFab(){
+        faqs.setVisibility(View.VISIBLE);
+        reportdamage.setVisibility(View.VISIBLE);
+        unabletoend.setVisibility(View.VISIBLE);
+        unabletounlock.setVisibility(View.VISIBLE);
+
+        //Change settings icon to 'X' icon
+        fabExpanded = true;
+    }
 
     @Override
     public void onBackPressed()
@@ -313,11 +408,41 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 
-        } else if (id == R.id.switchlocation) {
-            Intent intent = new Intent(Trip_Time.this, List_places.class);
+        }
+        else if (id == R.id.switchlocation) {
+            /*Intent intent = new Intent(Trip_Time.this, List_places.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            startActivity(intent);*/
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(Trip_Time.this);
+            LayoutInflater inflater = (LayoutInflater) Trip_Time.this.getSystemService(getApplication().LAYOUT_INFLATER_SERVICE);
+            View dialogLayout = inflater.inflate(R.layout.bikemap_popup2,
+                    null);
+            final AlertDialog dialog = builder.create();
+            dialog.getWindow().setSoftInputMode(
+                    WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+            dialog.setView(dialogLayout, 0, 0, 0, 0);
+            dialog.setCanceledOnTouchOutside(true);
+            dialog.setCancelable(true);
+            WindowManager.LayoutParams wlmp = dialog.getWindow()
+                    .getAttributes();
+            wlmp.gravity = Gravity.CENTER;
+            Button cancel = (Button) dialogLayout.findViewById(R.id.okbtn);
+            TextView textpopup = (TextView) dialogLayout.findViewById(R.id.popuptxt);
+
+            textpopup.setText("You are in trip ! So unable to Switch the Location. Please End the Trip if you want !");
+
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    //delgroup(grpnm);
+
+                    dialog.dismiss();
+                    dialog_progress.dismiss();
+                }
+            });
+            dialog.show();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -550,37 +675,35 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
 
   private Runnable updateTimerMethod = new Runnable() {
 
-
       public void run() {
           //Log.d("log","timeswap enter"+timeSwap);
           timeInMillies = SystemClock.uptimeMillis() - startTime;
           finalTime = timeSwap + timeInMillies;
+          //Log.d("finalTime-----","finalTime " +finalTime);
 
-          seconds = (int) (finalTime / 1000);
+          seconds=(int)((finalTime/1000)%60);
+          minutes=(int)(((finalTime/MILLIS_TO_MINITS))%60);
+          hours=(int)((finalTime/(MILLIS_TO_HOURS))%24);
+
+
+         /* seconds = (int) (finalTime / 1000);
+          //Log.d("seconds-----","seconds " +seconds);
 
           minutes = seconds / 60;
-
+          //Log.d("minutes-----","minutes " +minutes);
 
           hours = minutes / 60;
+          //Log.d("hours-----","hours " +hours);
 
           // int milliseconds = (int) (finalTime % 1000);
 
           seconds = seconds % 60;
+          //Log.d("seconds11-----","seconds11 " +seconds);*/
 
           triptmmap.setText("" + String.format("%02d", hours) + ":" + "" + String.format("%02d", minutes)+ ":" + "" + String.format("%02d", seconds));
           myHandler.postDelayed(this, 0);
 
-        /*  if (timestart==true){
-
-              triptmmap.setText("" + String.format("%02d", hourslaunch) + ":" + "" + String.format("%02d", minuteslaunch)+ ":" + "" + String.format("%02d", secondslaunch));
-              myHandler.postDelayed(this, 0);
-          }else {
-              triptmmap.setText("" + String.format("%02d", hours) + ":" + "" + String.format("%02d", minutes)+ ":" + "" + String.format("%02d", seconds));
-              myHandler.postDelayed(this, 0);
-              timestart=false;
-          }*/
       }
-
   };
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
@@ -601,7 +724,6 @@ public class Trip_Time extends AppCompatActivity implements NavigationView.OnNav
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_LOCATION);
-
 
             } else {
                 // No explanation needed, we can request the permission.

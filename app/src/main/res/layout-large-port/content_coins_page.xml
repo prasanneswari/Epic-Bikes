@@ -175,6 +175,33 @@
 
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="bottom|center"
+                >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ADD MONEY"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="23dp"
+                    android:id="@+id/addmoney"
+                    android:layout_marginTop="10dp"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:background="@drawable/btn_back"
+                    tools:ignore="HardcodedText,SpUsage" />
+            </LinearLayout>
 
 
         </LinearLayout>
