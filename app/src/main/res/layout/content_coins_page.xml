@@ -157,14 +157,12 @@
             android:gravity="center"
             android:layout_marginTop="20dp"
             />
-
         </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center">
-
-        <TextView
+                <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="every month !"
@@ -172,8 +170,41 @@
             android:textSize="23dp"
             android:gravity="center_vertical"
             android:layout_marginBottom="40dp"
-
             />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="+ 50"
+                    android:textSize="20dp"
+                    android:id="@+id/btn1"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="+ 100"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/btn2"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:text="+ 250"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:id="@+id/btn3"/>
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -193,7 +224,7 @@
                     android:text="ADD MONEY"
                     android:textAllCaps="false"
                     android:textColor="#fff"
-                    android:textSize="20dp"
+                    android:textSize="18dp"
                     android:id="@+id/addmoney"
                     android:layout_marginTop="10dp"
                     android:paddingRight="20dp"
@@ -205,8 +236,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
 
 
     </LinearLayout>
