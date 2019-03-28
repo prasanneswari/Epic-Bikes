@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.Damage_Scan_light"
+    tools:context="com.epickbikes.ebike_project.Damage_Scan_light"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -217,7 +217,6 @@
                 android:layout_height="70dp"
                 android:background="@drawable/text_border"
                 android:hint="Enter Bike ID"
-                android:inputType="number"
                 android:textSize="30dp"
                 android:textColor="#000"
                 android:ems="10"

@@ -219,7 +219,6 @@
                 android:layout_height="50dp"
                 android:background="@drawable/text_border"
                 android:hint="Enter Bike ID"
-                android:inputType="number"
                 android:textSize="17dp"
                 android:textColor="#000"
                 android:ems="10"

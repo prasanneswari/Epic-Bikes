@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.Report_damages"
+    tools:context="com.epickbikes.ebike_project.Report_damages"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,9 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-
                 >
-
                 <Button
                     android:layout_width="20dp"
                     android:layout_height="20dp"
@@ -287,7 +285,20 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             >
+            <!--<EditText
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:minLines="4"
+                android:gravity="top|left"
+                android:maxLines="10"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:hint="enter your Comments"
+                android:textSize="18dp"
+                android:id="@+id/commentdamage"
 
+                />-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -305,6 +316,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             >
 
             <Button
@@ -324,4 +336,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</ScrollView>

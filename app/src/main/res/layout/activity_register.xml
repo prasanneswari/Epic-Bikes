@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.jts.root.ebike_project.Register">
+    tools:context="com.epickbikes.ebike_project.Register">
 
 
     <LinearLayout
@@ -65,7 +65,7 @@
                 android:drawablePadding="10dp"
                 android:paddingLeft="20dp"
                 android:singleLine="true"
-                />
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/send_code_b"

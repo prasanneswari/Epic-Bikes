@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.Profile_page"
+    tools:context="com.epickbikes.ebike_project.Profile_page"
     >
 
     <LinearLayout
@@ -137,10 +137,12 @@
                 android:layout_height="1dp"
                 android:background="#000"
                 android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp">
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="50dp">
             </View>
 
 
+<!--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,7 +173,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="25"
+                            android:text="25"
                             android:id="@+id/totaltrips"
                             android:textSize="25dp"
                             android:textColor="#00aeef"
@@ -215,7 +217,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="2650 Cal"
+                            android:text="2650 Cal"
                             android:id="@+id/calories"
                             android:textSize="25dp"
                             android:textColor="#ff8b00"
@@ -256,7 +258,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="24 Kgs"
+                            android:text="24 Kgs"
                             android:id="@+id/co2saved"
                             android:textSize="25dp"
                             android:textColor="#00b594"
@@ -272,6 +274,7 @@
 
 
             </LinearLayout>
+-->
 
 
         </LinearLayout>

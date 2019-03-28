@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.End_trips"
+    tools:context="com.epickbikes.ebike_project.End_trips"
     >
 
 
@@ -159,7 +159,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="#110345"
+                    android:hint="110345"
                     android:id="@+id/bikeid"
                     android:textColor="#000"
                     android:gravity="center"
@@ -225,7 +225,8 @@ Manual Ending"
                     app:cursorVisible="true"
                     app:forceKeyboard="true"
                     app:inputType="number"
-                    android:visibility="visible">
+                    android:visibility="visible"
+                    tools:ignore="MissingConstraints">
 
                 </com.goodiebag.pinview.Pinview>
 

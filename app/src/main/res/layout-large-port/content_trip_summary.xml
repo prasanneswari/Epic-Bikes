@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.Trip_summary"
+    tools:context="com.epickbikes.ebike_project.Trip_summary"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,7 +75,7 @@
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="TRIP SUMMARUY"
+                    android:text="TRIP SUMMARY"
                     android:textColor="#000"
                     android:textSize="20dp" />
 

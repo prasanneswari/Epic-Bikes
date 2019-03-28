@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#e7e7e7"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.jts.root.ebike_project.Trip_history"
+    tools:context="com.epickbikes.ebike_project.Trip_history"
     >
 
     <LinearLayout
@@ -77,22 +77,18 @@
             android:background="@drawable/profile_back"
             >
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center">
+            >
             <ListView
                 android:id="@+id/historylst"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp">
             </ListView>
-
         </LinearLayout>
-
         </LinearLayout>
 
        <!-- <android.support.v7.widget.RecyclerView

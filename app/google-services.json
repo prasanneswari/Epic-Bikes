@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:942413232061:android:bf0a91a4d3f69195",
         "android_client_info": {
-          "package_name": "com.jts.root.ebike_project"
+          "package_name": "com.epickbikes.ebike_project"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "942413232061-nvu4414q87bfsgr0git5l38pc5kepa5v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.jts.root.ebike_project",
+            "package_name": "com.epickbikes.ebike_project",
             "certificate_hash": "ca273018ecc1fb8f1244b2f04181bc1f2a5aa44f"
           }
         },

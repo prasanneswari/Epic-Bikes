@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">ebike_project</string>
+    <string name="app_name">EpicK Bikes</string>
     <string name="title_activity_maps">Ebike</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
@@ -19,7 +19,6 @@
     <string name="title_activity_ontrip">ON MY TRIP</string>
 
     <string name="action_sign_in_short" tools:ignore="ExtraTranslation">Sign in</string>
-
 
 
     <string name="default_notification_channel" translatable="false">fcm_default_channel</string>
